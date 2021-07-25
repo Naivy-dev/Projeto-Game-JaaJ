@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a2ef0f095edcb46bf5b7581b21f78e, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  minTime: 5
-  maxTime: 10
-  isCollidable: 1
+  minTime: 16.3
+  maxTime: 19.6
+  isCollidable: 0

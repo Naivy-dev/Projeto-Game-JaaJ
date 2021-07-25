@@ -9,9 +9,9 @@ public class RangeColliderManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Lighting.TimeOfDay);
+        /*Debug.Log(Lighting.TimeOfDay);
         Debug.Log(Preset.minTime);
-        Debug.Log(Preset.maxTime);
+        Debug.Log(Preset.maxTime);*/
 
         if (Preset.minTime < Lighting.TimeOfDay && Preset.maxTime > Lighting.TimeOfDay)
         {
