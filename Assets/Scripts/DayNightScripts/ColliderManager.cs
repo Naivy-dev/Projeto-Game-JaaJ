@@ -8,6 +8,8 @@ public class ColliderManager : MonoBehaviour
     [SerializeField] private GameObject Obj;
     private Collider[] colliders;
     [SerializeField] private Material ObjMat;
+    [SerializeField] private Color32 defaultColor;
+    [SerializeField] private Color32 activeColor;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +28,10 @@ public class ColliderManager : MonoBehaviour
                 c.enabled = false;        
         }
 
-        /*if (Preset.isCollidable)
-            ObjMat.color = new Color(0f, 150f, 150f, 0.5f);
+        if (Preset.isCollidable)
+            ObjMat.color = activeColor;
+           
         else
-            ObjMat.color = new Color(255f, 255f, 255f, 0.5f);*/
+            ObjMat.color = defaultColor;
     }
 }
