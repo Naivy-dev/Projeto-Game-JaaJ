@@ -5,39 +5,39 @@ using UnityEngine;
 public class ShadowCollider : MonoBehaviour
 {
     [SerializeField] GameObject light;
+    public Vector3[] vertices;
 
+    public Vector3 topVertice;
+    public Vector3 bottomVertice;
      void Update()
     {
         Vector3 lightDir = light.transform.rotation * light.transform.forward;
 
-        Vector3 topLeft = new Vector3(transform.position.x - (transform.localScale.x / 2), transform.position.y + (transform.localScale.y/2), transform.position.z);
-        Vector3 topRight = new Vector3(transform.position.x + (transform.localScale.x / 2), transform.position.y + (transform.localScale.y / 2), transform.position.z);
+        Vector3 top = new Vector3(transform.position.x, transform.position.y + (transform.localScale.y/2), transform.position.z);
+        Vector3 bottom = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-        Ray rayTopLeft = new Ray(topLeft, lightDir);
-        Ray rayTopRight = new Ray(topRight, lightDir);
+        Ray raytop = new Ray(top, light.transform.forward);
+        Ray raybottom = new Ray(bottom, transform.forward);
         RaycastHit hitInfo;
-
+        
+        
         
 
-        if (Physics.Raycast(rayTopLeft, out hitInfo))
+        if (Physics.Raycast(raytop, out hitInfo))
         {
-            Debug.DrawLine(rayTopLeft.origin, hitInfo.point, Color.red);
+            Debug.DrawLine(raytop.origin, hitInfo.point, Color.red);
+            vertices = new Vector3[] { hitInfo.point };
+            topVertice = vertices[0];
+            Debug.Log(topVertice);
         }
         else
         {
-            Debug.DrawLine(rayTopLeft.origin, rayTopLeft.origin + rayTopLeft.direction * 100, Color.green);
+            Debug.DrawLine(raytop.origin, raytop.origin + raytop.direction * 100, Color.green);
         }
 
-        if (Physics.Raycast(rayTopRight, out hitInfo))
-        {
-            Debug.DrawLine(rayTopRight.origin, hitInfo.point, Color.red);
-        }
-        else
-        {
-            Debug.DrawLine(rayTopRight.origin, rayTopRight.origin + rayTopRight.direction * 100, Color.green);
-        }
+        
+        
 
     }
-
 
 }
