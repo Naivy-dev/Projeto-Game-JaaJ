@@ -29,9 +29,14 @@ public class ColliderManager : MonoBehaviour
         }
 
         if (Preset.isCollidable)
+        {
             ObjMat.color = activeColor;
-           
+            
+        }
+
         else
+        {
             ObjMat.color = defaultColor;
+        }
     }
 }
