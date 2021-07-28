@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeshManager : MonoBehaviour
+public class ShadowScaleManager : MonoBehaviour
 {
     [SerializeField] private ShadowCollider platformMeasure;
     [SerializeField] private GameObject platform;
