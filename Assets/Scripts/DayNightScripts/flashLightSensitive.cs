@@ -44,14 +44,14 @@ public class flashLightSensitive : MonoBehaviour
                 if (flashlight.hitInfo.collider == objectCollider)
                 {
                     nextTime = Time.time + coolDownTime;
-                    objectCollider.enabled = true;
-                    rend.sharedMaterial = material[0];
+                    objectCollider.isTrigger = true;
+                    rend.sharedMaterial = material[1];
                 }
                 else
                 {
                     nextTime = Time.time + coolDownTime;
-                    objectCollider.enabled = false;
-                    rend.sharedMaterial = material[1];
+                    objectCollider.isTrigger = false;
+                    rend.sharedMaterial = material[0];
                 }
             }
             
