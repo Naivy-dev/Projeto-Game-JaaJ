@@ -7,15 +7,18 @@ public class ColliderManager : MonoBehaviour
     [SerializeField] private RangeColliderPreset Preset;
     [SerializeField] private GameObject Obj;
     private Collider[] colliders;
-    [SerializeField] private Material ObjMat;
-    [SerializeField] private Color32 defaultColor;
-    [SerializeField] private Color32 activeColor;
+    [SerializeField] private Material MatBefore;
+    [SerializeField] private Material MatAfter;
+    private MeshRenderer[] material;
+    private Animator anim;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = Obj.GetComponent<Animator>();
         colliders = Obj.GetComponentsInChildren<Collider>();
+        material = Obj.GetComponentsInChildren<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -30,14 +33,23 @@ public class ColliderManager : MonoBehaviour
         }
 
         if (Preset.isCollidable)
-        {
-            ObjMat.color = activeColor;
-            
-        }
-
+            anim.SetBool("IsCollidable", true);
         else
         {
-            ObjMat.color = defaultColor;
+            anim.SetBool("IsCollidable", false);
+            //ChangeMaterial();
+        }
+
+    }
+
+    void ChangeMaterial()
+    {
+        foreach (MeshRenderer m in material)
+        {
+            if (Preset.isCollidable)
+                m.material = MatAfter;
+            else
+                m.material = MatBefore;
         }
     }
 }
