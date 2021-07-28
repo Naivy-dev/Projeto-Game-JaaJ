@@ -9,6 +9,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private LightingPreset Preset;
     [SerializeField, Range(0, 24)] public float TimeOfDay;
     [SerializeField, Range(0, 10)] private float TimeFlow = 0.5f;
+    [SerializeField, Range(0, 360)] public float SunRotation;
 
     private void Update()
     {
@@ -34,7 +35,7 @@ public class LightingManager : MonoBehaviour
         {
             DirectionalLight.color = Preset.DirectionalColor.Evaluate(timePercent);
 
-            DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, 90f, 0));
+            DirectionalLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360f) - 90f, SunRotation, 0));
         }
     }
 
