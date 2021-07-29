@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [ExecuteAlways]
 public class LightingManager : MonoBehaviour
@@ -13,6 +14,18 @@ public class LightingManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey("o"))
+        {
+            TimeFlow = .3f;
+        }
+        else if (Input.GetKey("i"))
+        {
+            TimeFlow = .6f;
+        }
+        else if (Input.GetKey("p"))
+        {
+            StartCoroutine(Test());
+        }
         if (Preset == null)
             return;
         if (Application.isPlaying)
@@ -25,6 +38,12 @@ public class LightingManager : MonoBehaviour
         {
             UpdateLighting(TimeOfDay / 24f);
         }
+    }
+    IEnumerator Test()
+    {
+        TimeFlow = .06f;
+        yield return new WaitForSecondsRealtime(3);
+        TimeFlow = .3f;
     }
 
     private void UpdateLighting(float timePercent)
