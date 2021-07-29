@@ -7,6 +7,7 @@ public class PressButton : MonoBehaviour
     [SerializeField] bool pressing = false;
     public GameObject button;
     public Animator anim;
+    public GameObject portal;
     // Update is called once per frame
     void Update()
     {
@@ -31,9 +32,11 @@ public class PressButton : MonoBehaviour
     void Green()
     {
         button.GetComponent<Renderer>().material.color = Color.green;
+        portal.SetActive(true);
     }
     void Red()
     {
         button.GetComponent<Renderer>().material.color = Color.red;
+        portal.SetActive(false);
     }
 }
