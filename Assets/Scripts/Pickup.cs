@@ -22,11 +22,13 @@ public class Pickup : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            grabbedObj.tag = "Box";
             grabbedObj = null;
         }
 
         if (grabbedObj)
         {
+            grabbedObj.tag = "GrabbedBox";
             grabbedObj.GetComponent<Rigidbody>().velocity = 10 * (grabbedObjLocation.position - grabbedObj.transform.position);
         }
     }
