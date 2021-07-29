@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Metal pattern 02
+  m_Name: Metal pattern 01 V2
   m_Shader: {fileID: -6465566751694194690, guid: da6adbbe6caf60440a6944b4b30d11df, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
@@ -92,6 +92,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: d5854954021862c4fa2da43144b07404, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalFromTexture_d530be71ca334e7f961e59d0a8af1d2d_Texture_0:
+        m_Texture: {fileID: 2800000, guid: 9b1dbb54b9c5f1143aa7e0be2921a7bb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OPACITY_MAP:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -149,9 +153,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2d79eb9550d34837b13da4b7aa11bbe1: 0.01
-    - Vector1_961b7aca4e1b4838a463ae6ded20edb7: 0
-    - Vector1_f298af61cb734d1a98c036d96b3d7685: 100
+    - Vector1_14ace00b63394b4cb64e2e08ed15cf99: 0.17
+    - Vector1_2d79eb9550d34837b13da4b7aa11bbe1: 0.04
+    - Vector1_961b7aca4e1b4838a463ae6ded20edb7: 1
+    - Vector1_abb6d8f9e15643f39aa9006b26b7267f: 0
+    - Vector1_f298af61cb734d1a98c036d96b3d7685: 70
     - _AlphaClip: 1
     - _BASE_COLOR_WEIGHT: 1
     - _BUMP_MAP_STRENGTH: 0.3
@@ -194,7 +200,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_5601aba97f9946cabd0ddcad25d7678c: {r: 0, g: 3.952941, b: 16, a: 0}
+    - Color_5601aba97f9946cabd0ddcad25d7678c: {r: 0.46207705, g: 0.2462014, b: 0.06847818, a: 1}
     - _BASE_COLOR: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.17236951}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

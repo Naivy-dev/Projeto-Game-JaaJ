@@ -42,7 +42,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material.Vector1_961b7aca4e1b4838a463ae6ded20edb7
-    path: 'Plataform '
+    path: Light-Plataform
     classID: 23
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -54,7 +54,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 4000905416
+      path: 1277840988
       attribute: 2278124148
       script: {fileID: 0}
       typeID: 23
@@ -107,7 +107,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material.Vector1_961b7aca4e1b4838a463ae6ded20edb7
-    path: 'Plataform '
+    path: Light-Plataform
     classID: 23
     script: {fileID: 0}
   m_EulerEditorCurves: []
