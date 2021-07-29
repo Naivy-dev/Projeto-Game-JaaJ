@@ -7,8 +7,8 @@ public class ColliderManager : MonoBehaviour
     [SerializeField] private RangeColliderPreset Preset;
     [SerializeField] private GameObject Obj;
     private Collider[] colliders;
-    [SerializeField] private Material MatBefore;
-    [SerializeField] private Material MatAfter;
+    private Material MatBefore;
+    private Material MatAfter;
     private MeshRenderer[] material;
     private Animator anim;
 
