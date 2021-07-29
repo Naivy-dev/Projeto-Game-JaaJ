@@ -25,7 +25,7 @@ Material:
   m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -154,7 +154,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_14ace00b63394b4cb64e2e08ed15cf99: 0.17
-    - Vector1_2d79eb9550d34837b13da4b7aa11bbe1: 0.04
+    - Vector1_2d79eb9550d34837b13da4b7aa11bbe1: 0.02
     - Vector1_961b7aca4e1b4838a463ae6ded20edb7: 1
     - Vector1_abb6d8f9e15643f39aa9006b26b7267f: 0
     - Vector1_f298af61cb734d1a98c036d96b3d7685: 30
