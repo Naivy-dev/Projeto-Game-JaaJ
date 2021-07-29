@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5908963514781805768}
   - component: {fileID: 2856903216960967927}
+  - component: {fileID: 1924084221}
   m_Layer: 0
   m_Name: FlashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5908963514781805768
 Transform:
   m_ObjectHideFlags: 0
@@ -93,6 +94,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1924084221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2303655526477659624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fea857e719aa4f4abfbcfc00dd6e160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 2303655526477659624}
+  vertices: []
+  topVertice: {x: 0, y: 0, z: 0}
 --- !u!1 &9016906684219087015
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9016906684775053695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5999999, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5908963514781805768}
