@@ -8,13 +8,15 @@ public class FlashlightMechanic : MonoBehaviour
     public Vector3[] vertices;
     public Vector3 topVertice;
     public RaycastHit hitInfo;
+    public LayerMask player;
+    public float flashLightRange = 100f;
 
     void Update()
     {
         Ray raytop = new Ray(flashlight.transform.position, flashlight.transform.forward);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(raytop, out hitInfo))
+        if (Physics.Raycast(raytop, out hitInfo, flashLightRange, ~player))
         {
             Debug.DrawLine(raytop.origin, hitInfo.point, Color.red);
             vertices = new Vector3[] { hitInfo.point };

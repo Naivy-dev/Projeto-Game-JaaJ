@@ -109,6 +109,10 @@ MonoBehaviour:
   flashlight: {fileID: 2303655526477659624}
   vertices: []
   topVertice: {x: 0, y: 0, z: 0}
+  player:
+    serializedVersion: 2
+    m_Bits: 64
+  flashLightRange: 100
 --- !u!1 &9016906684219087015
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +124,7 @@ GameObject:
   - component: {fileID: 9016906684219087010}
   - component: {fileID: 9016906684219087013}
   - component: {fileID: 9016906684219087012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -211,7 +215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9016906684775053695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5999999, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5908963514781805768}
@@ -324,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9016906684970538199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +361,7 @@ GameObject:
   - component: {fileID: 9016906684998406177}
   - component: {fileID: 9016906684998406176}
   - component: {fileID: 9016906684998406179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
