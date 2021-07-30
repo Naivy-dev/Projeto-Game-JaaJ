@@ -116,7 +116,7 @@ AnimationClip:
   m_Events:
   - time: 1.0166667
     functionName: ChangeMaterial
-    data: teu cu
+    data: safado
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

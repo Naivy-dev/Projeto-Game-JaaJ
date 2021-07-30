@@ -32,7 +32,7 @@ public class FlashlightSensitive : MonoBehaviour
                     nextTime = Time.time + coolDownTime;
                     objectCollider.isTrigger = false;
                     gameObject.layer = 7;
-                    rend.sharedMaterial = material[0];
+                    //rend.sharedMaterial = material[0];
                     anim.SetBool("Switch reverso", true);           
                 }
                 else
@@ -40,6 +40,7 @@ public class FlashlightSensitive : MonoBehaviour
                     objectCollider.isTrigger = true;
                     gameObject.layer = 0;
                     anim.SetBool("Switch reverso", false);
+
                 }
             }
             else if (this.tag == "unLightable")
@@ -71,5 +72,8 @@ public class FlashlightSensitive : MonoBehaviour
     {
         if (alo == "teu cu")
             rend.sharedMaterial = material[1];
+        else
+            rend.sharedMaterial = material[0];
+
     }
 }
