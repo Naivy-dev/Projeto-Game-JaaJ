@@ -6,6 +6,7 @@ public class ShadowScaleManager : MonoBehaviour
 {
     [SerializeField] private ShadowCollider platformMeasure;
     [SerializeField] private GameObject platform;
+    [SerializeField] private LightingManager Sun;
     [SerializeField] private float range;
     float Distance;
     float Scale;
@@ -23,6 +24,11 @@ public class ShadowScaleManager : MonoBehaviour
             Scale = range;
         }
         else if (Distance < -range)
+        {
+            Scale = 0;
+        }
+
+        if (Sun.TimeOfDay < 5 || Sun.TimeOfDay > 18)
         {
             Scale = 0;
         }
