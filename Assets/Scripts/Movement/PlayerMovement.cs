@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = .6f;
     public LayerMask groundMask;
-    public GameObject flashlight;
+    public Light flashlight;
+    public GameObject flashlightLimiter;
     private bool toggle;
 
     Vector3 velocity;
@@ -24,11 +25,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
             toggle = !toggle;
-            if(toggle)  
-                flashlight.SetActive(true);
-            else
-                flashlight.SetActive(false);
-            
+        if (toggle) {
+            flashlightLimiter.SetActive(false);
+            flashlight.enabled = true; 
+        }
+        else
+        {
+            flashlightLimiter.SetActive(true);
+            flashlight.enabled = false;
+        }
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 

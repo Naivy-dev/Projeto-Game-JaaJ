@@ -9,7 +9,7 @@ public class FlashlightMechanic : MonoBehaviour
     public Vector3 topVertice;
     public RaycastHit hitInfo;
     public LayerMask player;
-    public float flashLightRange = 100f;
+    public float flashLightRange = 20;
 
     void Update()
     {
