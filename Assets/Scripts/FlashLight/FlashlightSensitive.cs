@@ -7,6 +7,7 @@ public class FlashlightSensitive : MonoBehaviour
     [SerializeField] FlashlightMechanic flashlight;
     [SerializeField] MeshCollider objectCollider;
     [SerializeField] float coolDownTime;
+    [SerializeField] private Animator anim;
 
     public Material[] material;
     Renderer rend;
@@ -32,12 +33,13 @@ public class FlashlightSensitive : MonoBehaviour
                     objectCollider.isTrigger = false;
                     gameObject.layer = 7;
                     rend.sharedMaterial = material[0];
+                    anim.SetBool("Switch reverso", true);           
                 }
                 else
                 {                    
                     objectCollider.isTrigger = true;
                     gameObject.layer = 0;
-                    rend.sharedMaterial = material[1];
+                    anim.SetBool("Switch reverso", false);
                 }
             }
             else if (this.tag == "unLightable")
@@ -47,17 +49,27 @@ public class FlashlightSensitive : MonoBehaviour
                     nextTime = Time.time + coolDownTime;
                     objectCollider.isTrigger = true;
                     gameObject.layer = 0;
-                    rend.sharedMaterial = material[1];
+                    anim.SetBool("Switch", true);
+                    //rend.sharedMaterial = material[1];
                 }
                 else
                 {                    
                     objectCollider.isTrigger = false;
                     gameObject.layer = 7;
                     rend.sharedMaterial = material[0];
+                    anim.SetBool("Switch", false);
+                    
                 }
             }
 
         }
 
+    }
+
+    
+    public void ChangeMaterial(string alo)
+    {
+        if (alo == "teu cu")
+            rend.sharedMaterial = material[1];
     }
 }

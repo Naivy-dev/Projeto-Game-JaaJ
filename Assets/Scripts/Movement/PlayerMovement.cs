@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public Light flashlight;
     public GameObject flashlightLimiter;
     private bool toggle;
-    [SerializeField]float cooldown = 0;
-    private float nextTime = 0;
 
     Vector3 velocity;
     bool isGrounded;
