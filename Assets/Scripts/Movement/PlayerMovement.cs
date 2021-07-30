@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = .6f;
     public LayerMask groundMask;
-
+    public GameObject flashlight;
+    private bool toggle;
 
     Vector3 velocity;
     bool isGrounded;
@@ -21,6 +22,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+            toggle = !toggle;
+            if(toggle)  
+                flashlight.SetActive(true);
+            else
+                flashlight.SetActive(false);
+            
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)

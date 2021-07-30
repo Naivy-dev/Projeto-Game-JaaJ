@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlashlightSensitive : MonoBehaviour
 {
     [SerializeField] FlashlightMechanic flashlight;
-    [SerializeField] BoxCollider objectCollider;
+    [SerializeField] MeshCollider objectCollider;
     [SerializeField] float coolDownTime;
 
     public Material[] material;

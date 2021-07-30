@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5908963514781805768}
   - component: {fileID: 2856903216960967927}
-  - component: {fileID: 1924084221}
+  - component: {fileID: 132551260}
   m_Layer: 0
   m_Name: FlashLight
   m_TagString: Untagged
@@ -94,7 +94,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1924084221
+--- !u!114 &132551260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,6 +187,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+  flashlight: {fileID: 2303655526477659624}
 --- !u!1 &9016906684775053695
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +398,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9016906684998406181}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
