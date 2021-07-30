@@ -21,7 +21,7 @@ public class Teleport : MonoBehaviour
             if(dotProd < 0f)
             {
                 float rotDiff = -Quaternion.Angle(transform.rotation, receiver.rotation);
-                rotDiff += 180;
+                
                 player.transform.Rotate(Vector3.up, rotDiff);
 
                 Vector3 posOffset = Quaternion.Euler(0f, rotDiff, 0f) * pToP;

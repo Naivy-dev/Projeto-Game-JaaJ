@@ -6,6 +6,8 @@ TagManager:
   tags:
   - lightAble
   - unLightable
+  - Box
+  - GrabbedBox
   layers:
   - Default
   - TransparentFX
