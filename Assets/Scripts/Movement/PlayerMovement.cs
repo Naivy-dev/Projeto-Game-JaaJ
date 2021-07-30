@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = .6f;
     public LayerMask groundMask;
-
+    public Light flashlight;
+    public GameObject flashlightLimiter;
+    private bool toggle;
 
     Vector3 velocity;
     bool isGrounded;
@@ -21,6 +23,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+            toggle = !toggle;
+        if (toggle) {
+            flashlightLimiter.SetActive(false);
+            flashlight.enabled = true;
+            flashlight.gameObject.SetActive(true);
+        }
+        else
+        {
+            flashlightLimiter.SetActive(true);
+            StartCoroutine(Testezinho());
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -43,5 +58,12 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    IEnumerator Testezinho()
+    {
+        yield return new WaitForSecondsRealtime(0.0000001f);
+        flashlight.gameObject.SetActive(false);
+        flashlight.enabled = false;
     }
 }
