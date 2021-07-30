@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tutorial
   m_EditorClassIdentifier: 
   minTime: 12
-  maxTime: 15.14
+  maxTime: 14.9
   isCollidable: 0
