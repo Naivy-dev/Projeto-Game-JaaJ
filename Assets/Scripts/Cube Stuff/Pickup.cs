@@ -9,6 +9,8 @@ public class Pickup : MonoBehaviour
     RaycastHit hitPickup;
     GameObject grabbedObj;
     public Transform grabbedObjLocation;
+    public LayerMask flashLimiter;
+
     private void Update()
     {
         Yrot -= Input.GetAxis("Mouse Y");
@@ -16,7 +18,7 @@ public class Pickup : MonoBehaviour
         transform.localRotation = Quaternion.Euler(Yrot, 0f, 0f);
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward, out hitPickup, 10) && hitPickup.transform.GetComponent<Rigidbody>())
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward, out hitPickup, 10, ~flashLimiter) && hitPickup.transform.GetComponent<Rigidbody>())
         {
             grabbedObj = hitPickup.transform.gameObject;
         }
