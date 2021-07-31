@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8691322959240512017}
   - component: {fileID: 8691322959240512110}
   - component: {fileID: 5278673125811228591}
+  - component: {fileID: 5213333369930226710}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -46,9 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 0}
   Preset: {fileID: 11400000, guid: 30d138987d441254090fe8a0f473572f, type: 2}
-  TimeOfDay: 3.9
-  TimeFlow: 0.2
+  TimeOfDay: 0
+  TimeFlow: 0.3
   SunRotation: 0
+  hours: {fileID: 0}
 --- !u!114 &5278673125811228591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,3 +65,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Preset: {fileID: 11400000, guid: 803dc5cbb37e7a0489218852dde3a452, type: 2}
   Lighting: {fileID: 8691322959240512110}
+--- !u!114 &5213333369930226710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691322959240512111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffccaf37febe77a41990471ac24059b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalCam: {fileID: 0}
+  portalMat: {fileID: 2100000, guid: f2e2b024039de204e9dffc7ee67a606b, type: 2}

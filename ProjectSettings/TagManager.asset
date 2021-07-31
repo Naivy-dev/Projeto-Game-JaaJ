@@ -8,6 +8,8 @@ TagManager:
   - unLightable
   - Box
   - GrabbedBox
+  - PortalReverse
+  - PortalOK
   layers:
   - Default
   - TransparentFX
