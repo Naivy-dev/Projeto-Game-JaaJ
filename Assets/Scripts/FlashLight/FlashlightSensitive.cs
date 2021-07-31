@@ -57,7 +57,7 @@ public class FlashlightSensitive : MonoBehaviour
                 {                    
                     objectCollider.isTrigger = false;
                     gameObject.layer = 7;
-                    rend.sharedMaterial = material[0];
+                    //rend.sharedMaterial = material[0];
                     anim.SetBool("Switch", false);
                     
                 }
