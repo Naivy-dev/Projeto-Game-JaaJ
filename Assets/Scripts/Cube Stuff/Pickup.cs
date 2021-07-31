@@ -10,22 +10,26 @@ public class Pickup : MonoBehaviour
     GameObject grabbedObj;
     public Transform grabbedObjLocation;
     public LayerMask flashLimiter;
+    public LayerMask player;
 
     private void Update()
     {
         Yrot -= Input.GetAxis("Mouse Y");
         Yrot = Mathf.Clamp(Yrot, -60, 60);
         transform.localRotation = Quaternion.Euler(Yrot, 0f, 0f);
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward, out hitPickup, 10, ~flashLimiter) && hitPickup.transform.GetComponent<Rigidbody>())
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward, out hitPickup, 10, ~flashLimiter & ~player) && hitPickup.transform.GetComponent<Rigidbody>())
         {
+            Debug.DrawLine(transform.position, hitPickup.point, Color.green);
             grabbedObj = hitPickup.transform.gameObject;
         }
         else if (Input.GetMouseButtonUp(0))
         {
             grabbedObj.tag = "Box";
             grabbedObj = null;
+            if (grabbedObj == null)
+            {
+                return;
+            }
         }
 
         if (grabbedObj)

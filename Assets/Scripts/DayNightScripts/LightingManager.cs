@@ -11,6 +11,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField, Range(0, 24)] public float TimeOfDay;
     [SerializeField, Range(0, 10)] private float TimeFlow = 0.5f;
     [SerializeField, Range(0, 360)] public float SunRotation;
+    public TextMeshProUGUI hours;
 
     private void Update()
     {
@@ -38,6 +39,7 @@ public class LightingManager : MonoBehaviour
         {
             UpdateLighting(TimeOfDay / 24f);
         }
+        hours.text = (int)TimeOfDay + "h";
     }
     IEnumerator Test()
     {
