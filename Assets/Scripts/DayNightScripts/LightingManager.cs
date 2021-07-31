@@ -13,6 +13,11 @@ public class LightingManager : MonoBehaviour
     [SerializeField, Range(0, 360)] public float SunRotation;
     public TextMeshProUGUI hours;
 
+    public void Awake()
+    {
+        //DontDestroyOnLoad(this);
+    }
+
     private void Update()
     {
         if (Input.GetKey("o"))
