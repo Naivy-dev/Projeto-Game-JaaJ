@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8691322959240512110}
   - component: {fileID: 5278673125811228591}
   - component: {fileID: 5213333369930226710}
+  - component: {fileID: 5993351585784498685}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -50,7 +51,7 @@ MonoBehaviour:
   TimeOfDay: 0
   TimeFlow: 0.3
   SunRotation: 0
-  hours: {fileID: 0}
+  hours: {fileID: 2774144769983662357, guid: 9fa8526ddff0c914fbe303948816cab7, type: 3}
 --- !u!114 &5278673125811228591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,3 +80,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalCam: {fileID: 0}
   portalMat: {fileID: 2100000, guid: f2e2b024039de204e9dffc7ee67a606b, type: 2}
+--- !u!114 &5993351585784498685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8691322959240512111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cf33a6a6315b14e91bb93a2097d467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HUD: {fileID: 4999604922520350531, guid: 3fcb3da6559540246bb3e16b44526860, type: 3}
+  pauseHUD: {fileID: 5451444903353301127, guid: c11a7a3b561afd947985ebf33fe45601, type: 3}
+  isPaused: 0
