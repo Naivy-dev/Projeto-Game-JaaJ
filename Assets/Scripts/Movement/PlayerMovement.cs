@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             flashlightLimiter.SetActive(true);
             StartCoroutine(Testezinho());
         }
-
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }

@@ -68,13 +68,12 @@ public class AudioManager : MonoBehaviour
                     track02.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
                     yield return new WaitForSeconds(0.001f);
                     TimeElapsed += Time.deltaTime;
-                    
                 }
             }
             else if (isPlayingOthers == 2)
             {
                 track03.clip = newClip;
-                track03.PlayDelayed(track02.clip.length - track02.time);
+                track03.PlayDelayed(track02.clip.length - track01.time);
                 yield return new WaitForSeconds(track01.clip.length - track01.time);
                 while (TimeElapsed < FadeTime)
                 {
@@ -87,7 +86,7 @@ public class AudioManager : MonoBehaviour
             else if (isPlayingOthers == 3)
             {
                 track04.clip = newClip;
-                track04.PlayDelayed(track03.clip.length - track03.time);
+                track04.PlayDelayed(track03.clip.length - track01.time);
                 yield return new WaitForSeconds(track01.clip.length - track01.time);
                 while (TimeElapsed < FadeTime)
                 {
@@ -100,7 +99,7 @@ public class AudioManager : MonoBehaviour
             else if (isPlayingOthers == 4)
             {
                 track05.clip = newClip;
-                track05.PlayDelayed(track04.clip.length - track04.time);
+                track05.PlayDelayed(track04.clip.length - track01.time);
                 yield return new WaitForSeconds(track01.clip.length - track01.time);
                 while (TimeElapsed < FadeTime)
                 {
