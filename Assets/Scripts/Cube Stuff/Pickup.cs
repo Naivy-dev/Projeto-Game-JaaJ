@@ -13,13 +13,16 @@ public class Pickup : MonoBehaviour
     public LayerMask player;
     public LayerMask groundMask;
     public GameObject groundCheck;
+    bool isGrounded;
 
     private void Update()
     {
+
+        isGrounded = Physics.CheckSphere(groundCheck.transform.position, 0.6f, groundMask);
         Yrot -= Input.GetAxis("Mouse Y");
         Yrot = Mathf.Clamp(Yrot, -90, 90);
         transform.localRotation = Quaternion.Euler(Yrot, 0f, 0f);
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward, out hitPickup, 10, ~flashLimiter & ~player) && hitPickup.transform.GetComponent<Rigidbody>() && CubeCheck())
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward, out hitPickup, 10, ~flashLimiter & ~player) && hitPickup.transform.GetComponent<Rigidbody>() && CubeCheck() && isGrounded)
         {
             Debug.DrawLine(transform.position, hitPickup.point, Color.green);
             grabbedObj = hitPickup.transform.gameObject;

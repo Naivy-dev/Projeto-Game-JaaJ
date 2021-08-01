@@ -1511,6 +1511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMenu: {fileID: 925376249}
   loadingInterface: {fileID: 602600211}
+  mSense: 0
   audioMixer: {fileID: 24100000, guid: e95c0501c43982545933e51596064639, type: 2}
 --- !u!1 &1020466728
 GameObject:
@@ -2770,6 +2771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfde624ea8a75742bf19af07826534c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 1012253552}
+  mouseSense: 0
 --- !u!4 &1815906172
 Transform:
   m_ObjectHideFlags: 0

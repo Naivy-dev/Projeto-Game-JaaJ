@@ -9,6 +9,7 @@ public class StartMenu : MonoBehaviour
 {
     public GameObject startMenu;
     public GameObject loadingInterface;
+    public float mSense, vol;
 
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
@@ -33,18 +34,23 @@ public class StartMenu : MonoBehaviour
 
     //Sensitivity and Volume Slider
 
+    private void Start()
+    {
+        SetSense(1f);
+    }
+
     public void SetSense(float sense)
     {
-        GameObject camera = GameObject.Find("Main Camera");
-        MouseLook mouseLook = camera.GetComponent<MouseLook>();
-        mouseLook.mouseSensitivity = sense;
+        //GameObject camera = GameObject.Find("Main Camera");
+        //MouseLook mouseLook = camera.GetComponent<MouseLook>();
+        this.mSense = sense;
     }
 
 
     public AudioMixer audioMixer;
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        this.vol = volume;   
     }
 
 
