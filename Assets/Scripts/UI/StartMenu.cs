@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class StartMenu : MonoBehaviour
 {
@@ -29,6 +30,14 @@ public class StartMenu : MonoBehaviour
             }
         }
     }
+
+    //Sensitivity and Volume Slider
+    public AudioMixer audioMixer;
+    public void SetVolume(float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
+    }
+
 
     public void QuitGame()
     {
