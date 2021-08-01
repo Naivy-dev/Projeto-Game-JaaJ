@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class AudioCollider : MonoBehaviour
 {
-    public CharacterController Player;
-    [SerializeField] float vol;
-    [SerializeField] string audioName;
+    public Sound[] sounds;
+    public int cont;
+    public AudioClip newTrack;
     private void OnTriggerEnter(Collider col)
     {
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+        }
         if (col.tag == "Player")
         {
-            FindObjectOfType<AudioManager>().ChangeVolume(audioName , vol);
-            Object.Destroy(gameObject);
+            if(cont < sounds.Length)
+            {
+                newTrack = sounds[cont].clip;
+                AudioManager.instance.AddTrack(newTrack);
+                cont++;
+            }
         }
-            
-    }
 
-    private void OnTriggerExit(Collider col)
-    {
-        
     }
 }

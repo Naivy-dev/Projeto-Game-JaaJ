@@ -3,11 +3,13 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviour 
 {
-    public Sound[] sounds;
+    public AudioClip DefaultClip;
+    public AudioSource track01, track02, track03, track04, track05;
     public static AudioManager instance;
-
+    public bool isPlaying01;
+    public int isPlayingOthers;
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,57 +17,82 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
 
-        DontDestroyOnLoad(gameObject);
-
-        foreach (Sound s in sounds)
-        {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-        }
     }
 
     private void Start()
     {
-        Play("ClockTick");
-        Play("Choir Part");
+        track01 = gameObject.AddComponent<AudioSource>();
+        track02 = gameObject.AddComponent<AudioSource>();
+        track03 = gameObject.AddComponent<AudioSource>();
+        track04 = gameObject.AddComponent<AudioSource>();
+        track05 = gameObject.AddComponent<AudioSource>();
+        track01.loop = true;
+        track02.loop = true;
+        track03.loop = true;
+        track04.loop = true;
+        track05.loop = true;
+        AddTrack(DefaultClip);
+        isPlaying01 = true;
+        isPlayingOthers = 0;
     }
 
-    void Update()
+    public void AddTrack(AudioClip newClip)
     {
-        
+        StartCoroutine(FadeTrack(newClip));
+        isPlayingOthers++;
     }
-
-    public void Play (string name)
+    private IEnumerator FadeTrack(AudioClip newClip)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        float FadeTime = 1.5f;
+        float TimeElapsed = 0;
+        if (isPlaying01)
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
-            return;
+              if (isPlayingOthers == 1)
+            {
+                track02.clip = newClip;
+                track02.Play();
+                while (TimeElapsed < FadeTime)
+                {
+                    track02.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                    TimeElapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
+            else if (isPlayingOthers == 2)
+            {
+                track03.clip = newClip;
+                track03.Play();
+                while (TimeElapsed < FadeTime)
+                {
+                    track03.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                    TimeElapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
+            else if (isPlayingOthers == 3)
+            {
+                track04.clip = newClip;
+                track04.Play();
+                while (TimeElapsed < FadeTime)
+                {
+                    track04.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                    TimeElapsed += Time.deltaTime;
+                    yield return null;
+                }
+            }
         }
-        s.source.Play();
-    }
-    public void ChangeVolume(string audioName, float vol)
-    {   
-        Sound s = Array.Find(sounds, sound => sound.name == audioName);
-        if (s == null)
+        else
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
-            return;
-        }    
-            s.source.volume = vol;        
+            track01.clip = newClip;
+            track01.Play();
+            while (TimeElapsed < FadeTime)
+            {
+                track01.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                TimeElapsed += Time.deltaTime;
+                yield return null;
+            }
+        }
     }
-
-    
 
 }

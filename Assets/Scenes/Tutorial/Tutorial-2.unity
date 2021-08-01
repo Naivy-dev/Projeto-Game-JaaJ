@@ -2381,7 +2381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &551049323
 Transform:
   m_ObjectHideFlags: 0
@@ -2408,9 +2408,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17c0ba7a7032a34284232dd3dd323c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1203736405}
-  vol: 0.5
-  audioName: Choir Part
+  sounds:
+  - name: 
+    clip: {fileID: 8300000, guid: 5a5783b5c7e847c4eb3635221dceb74a, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: 94d7e3f9d9291ff449f1317cd2b228ed, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 8300000, guid: ae9a4455afe36db4a897a7f0420e8621, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  cont: 0
+  newTrack: {fileID: 0}
 --- !u!65 &551049325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12991,6 +13009,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 918936279943651105, guid: 367bc1265cff50e43a899382e7277aa3, type: 3}
+      propertyPath: DefaultClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a83de8172df7ace4291db6c13345db1d, type: 3}
     - target: {fileID: 918936279943651105, guid: 367bc1265cff50e43a899382e7277aa3, type: 3}
       propertyPath: sounds.Array.size
       value: 2
