@@ -5,7 +5,6 @@ using UnityEngine;
 public class AudioCollider : MonoBehaviour
 {
     public Sound[] sounds;
-    public int cont;
     public AudioClip newTrack;
     private void OnTriggerEnter(Collider col)
     {
@@ -16,13 +15,13 @@ public class AudioCollider : MonoBehaviour
         }
         if (col.tag == "Player")
         {
-            if(cont < sounds.Length)
+            if(AudioManager.instance.cont < sounds.Length)
             {
-                newTrack = sounds[cont].clip;
+                newTrack = sounds[AudioManager.instance.cont].clip;
                 AudioManager.instance.AddTrack(newTrack);
-                cont++;
+                AudioManager.instance.cont++;
             }
         }
-
+        this.gameObject.SetActive(false);
     }
 }

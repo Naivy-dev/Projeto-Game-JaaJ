@@ -43,4 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7187ddb6aef20d24ba6fc11d74797424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  DefaultClip: {fileID: 8300000, guid: a83de8172df7ace4291db6c13345db1d, type: 3}
+  track01: {fileID: 0}
+  track02: {fileID: 0}
+  track03: {fileID: 0}
+  track04: {fileID: 0}
+  track05: {fileID: 0}
+  isPlaying01: 0
+  isPlayingOthers: 0
