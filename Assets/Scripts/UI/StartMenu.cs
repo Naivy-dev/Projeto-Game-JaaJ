@@ -32,11 +32,21 @@ public class StartMenu : MonoBehaviour
     }
 
     //Sensitivity and Volume Slider
+
+    public void SetSense(float sense)
+    {
+        GameObject camera = GameObject.Find("Main Camera");
+        MouseLook mouseLook = camera.GetComponent<MouseLook>();
+        mouseLook.mouseSensitivity = sense;
+    }
+
+
     public AudioMixer audioMixer;
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
     }
+
 
 
     public void QuitGame()
