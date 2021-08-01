@@ -9,6 +9,7 @@ public class PressButton : MonoBehaviour
     public GameObject wall;
     public Animator anim;
     public Animator anim2;
+
     // Update is called once per frame
     void Update()
     {

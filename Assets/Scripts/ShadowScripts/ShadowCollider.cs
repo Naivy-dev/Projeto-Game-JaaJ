@@ -7,13 +7,14 @@ public class ShadowCollider : MonoBehaviour
     [SerializeField] GameObject sunLight;
     public Vector3[] vertices;
     public Vector3 topVertice;
+    public LayerMask player;
     void Update()
     {        
         Vector3 top = new Vector3(transform.position.x, transform.position.y + (transform.localScale.y / 2), transform.position.z);
         Ray raytop = new Ray(top, sunLight.transform.forward);
         RaycastHit hitInfo;
-
-        if (Physics.Raycast(raytop, out hitInfo))
+        
+        if (Physics.Raycast(raytop, out hitInfo, 1000, ~player))
         {
             Debug.DrawLine(raytop.origin, hitInfo.point, Color.red);
             vertices = new Vector3[] { hitInfo.point };
