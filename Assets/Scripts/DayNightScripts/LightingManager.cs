@@ -20,15 +20,15 @@ public class LightingManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("o"))
+        if (Input.GetKey("q"))
         {
             TimeFlow = .3f;
         }
-        else if (Input.GetKey("i"))
+        else if (Input.GetKey("e"))
         {
             TimeFlow = .6f;
         }
-        else if (Input.GetKey("p"))
+        else if (Input.GetKey("r"))
         {
             StartCoroutine(Test());
         }
