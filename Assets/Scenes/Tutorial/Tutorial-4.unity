@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18268803, g: 0.22839576, b: 0.30710822, a: 1}
+  m_IndirectSpecularColor: {r: 0.18268827, g: 0.22839609, b: 0.30710945, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5322,7 +5322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5918498037973370271, guid: 19b884eb3877efc45a89044dd2abd114, type: 3}
       propertyPath: m_Name
-      value: TutorialBox
+      value: FinalScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b884eb3877efc45a89044dd2abd114, type: 3}
