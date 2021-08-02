@@ -26,7 +26,7 @@ public class LightingManager : MonoBehaviour
         }
         else if (Input.GetKey("e"))
         {
-            TimeFlow = .6f;
+            TimeFlow = 1f;
         }
         else if (Input.GetKey("r"))
         {
