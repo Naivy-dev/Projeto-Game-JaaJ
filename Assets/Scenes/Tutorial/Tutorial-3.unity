@@ -1092,6 +1092,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4999604922520350531, guid: 3fcb3da6559540246bb3e16b44526860, type: 3}
   m_PrefabInstance: {fileID: 530693073}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &530693075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1280701615444932884, guid: 3fcb3da6559540246bb3e16b44526860, type: 3}
+  m_PrefabInstance: {fileID: 530693073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &583432380
 Mesh:
   m_ObjectHideFlags: 0
@@ -1923,17 +1934,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &932796073 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4999604923280772363, guid: 3fcb3da6559540246bb3e16b44526860, type: 3}
-  m_PrefabInstance: {fileID: 530693073}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &985221537
 Mesh:
   m_ObjectHideFlags: 0
@@ -4051,7 +4051,7 @@ PrefabInstance:
     - target: {fileID: 8691322959240512110, guid: 4e3e7f9e66b7d65438310b690e34b28f, type: 3}
       propertyPath: hours
       value: 
-      objectReference: {fileID: 932796073}
+      objectReference: {fileID: 530693075}
     - target: {fileID: 8691322959240512110, guid: 4e3e7f9e66b7d65438310b690e34b28f, type: 3}
       propertyPath: TimeOfDay
       value: 8.65
