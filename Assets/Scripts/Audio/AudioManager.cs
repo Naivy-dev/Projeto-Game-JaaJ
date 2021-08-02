@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
                 yield return new WaitForSeconds(track01.clip.length - track01.time);
                 while (TimeElapsed < FadeTime)
                 {
-                    track02.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                    track02.volume = Mathf.Lerp(0, 0.5f, TimeElapsed / FadeTime);
                     yield return new WaitForSeconds(0.001f);
                     TimeElapsed += Time.deltaTime;
                 }
@@ -74,10 +74,10 @@ public class AudioManager : MonoBehaviour
             {
                 track03.clip = newClip;
                 track03.PlayDelayed(track02.clip.length - track01.time);
-                yield return new WaitForSeconds(track01.clip.length - track01.time);
+                yield return new WaitForSeconds(track02.clip.length - track01.time);
                 while (TimeElapsed < FadeTime)
                 {
-                    track03.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                    track03.volume = Mathf.Lerp(0, 0.5f, TimeElapsed / FadeTime);
                     yield return new WaitForSeconds(0.001f);
                     TimeElapsed += Time.deltaTime;
 
@@ -87,10 +87,10 @@ public class AudioManager : MonoBehaviour
             {
                 track04.clip = newClip;
                 track04.PlayDelayed(track03.clip.length - track01.time);
-                yield return new WaitForSeconds(track01.clip.length - track01.time);
+                yield return new WaitForSeconds(track03.clip.length - track01.time);
                 while (TimeElapsed < FadeTime)
                 {
-                    track04.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                    track04.volume = Mathf.Lerp(0, 0.5f, TimeElapsed / FadeTime);
                     yield return new WaitForSeconds(0.001f);
                     TimeElapsed += Time.deltaTime;
 
@@ -100,10 +100,10 @@ public class AudioManager : MonoBehaviour
             {
                 track05.clip = newClip;
                 track05.PlayDelayed(track04.clip.length - track01.time);
-                yield return new WaitForSeconds(track01.clip.length - track01.time);
+                yield return new WaitForSeconds(track04.clip.length - track01.time);
                 while (TimeElapsed < FadeTime)
                 {
-                    track05.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                    track05.volume = Mathf.Lerp(0, 0.5f, TimeElapsed / FadeTime);
                     yield return new WaitForSeconds(0.001f);
                     TimeElapsed += Time.deltaTime;
 
@@ -116,7 +116,7 @@ public class AudioManager : MonoBehaviour
             track01.Play();
             while (TimeElapsed < FadeTime)
             {
-                track01.volume = Mathf.Lerp(0, 1, TimeElapsed / FadeTime);
+                track01.volume = Mathf.Lerp(0, 0.5f, TimeElapsed / FadeTime);
                 TimeElapsed += Time.deltaTime;
                 yield return null;
             }
